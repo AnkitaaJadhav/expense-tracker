@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<section id="auth-section" class="auth-section">
+    <h2>Welcome to Your Expense Tracker</h2>
+    <p>Sign in or create an account to manage your expenses.</p>
+
+    <label for="auth-email">Email</label>
+    <input type="email" id="auth-email" placeholder="Enter your email" required>
+
+    <label for="auth-password">Password</label>
+    <input type="password" id="auth-password" placeholder="Enter your password" required>
+
+    <div class="auth-buttons">
+        <button type="button" id="signup-button">Create Account</button>
+        <button type="button" id="login-button">Log In</button>
+    </div>
+
+    
+    <p id="auth-message" role="status"></p>
+</section>
+<main id="dashboard-section">
+
+    
+
+<header>
+    <h1>My Expense Tracker</h1>
+    <p>Small expenses, bigger dreams.</p>
+
+    <button type="button" id="logout-button" hidden>
+        Log Out
+    </button>
+
+</header>
+
+
+
+    
+<section class="month-section">
+    <h2>Plan Your Expense Cycle</h2>
+
+    <div class="date-inputs">
+        <div>
+            <label for="start-date">Start Date</label>
+            <input type="date" id="start-date" required>
+        </div>
+
+        <div>
+            <label for="end-date">End Date</label>
+            <input type="date" id="end-date" required>
+        </div>
+
+        <div>
+            <label for="monthly-budget">Budget (₹)</label>
+            <input
+                type="number"
+                id="monthly-budget"
+                placeholder="Enter budget"
+                min="1"
+                required
+            >
+        </div>
+
+        <button id="save-cycle">Save Expense Cycle</button>
+    </div>
+
+    <p id="cycle-message"></p>
+</section>
+
+
+    <section class="dashboard">
+
+        <div class="card budget-card">
+            <h3>Monthly Budget</h3>
+            <h2 id="budget">₹10,000</h2>
+        </div>
+
+        <div class="card spent-card">
+            <h3>Total Spent</h3>
+            <h2 id="spent">₹0</h2>
+        </div>
+
+        <div class="card remaining-card">
+            <h3>Remaining Budget</h3>
+            <h2 id="remaining">₹10,000</h2>
+        </div>
+
+    </section>
+
+    
+<section class="expense-section">
+    <div class="table-heading">
+        <div>
+            <h2>Daily Expenses</h2>
+            <p>Every rupee counts. Keep your spending in balance.</p>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <table id="expense-table">
+            <thead>
+                <tr>
+                    <th>Date & Day</th>
+                    <th>Breakfast</th>
+                    <th>Lunch</th>
+                    <th>Dinner</th>
+                    <th>Extra</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+
+            <tbody id="expense-body">
+                <tr>
+                    <td colspan="7">
+                        Save an expense cycle to generate your daily rows.
+                    </td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th>Category Totals</th>
+                    <th id="breakfast-total">₹0</th>
+                    <th id="lunch-total">₹0</th>
+                    <th id="dinner-total">₹0</th>
+                    <th id="extra-total">₹0</th>
+                    <th id="grand-total">₹0</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</section>
+
+
+<section class="history-section">
+    <div class="table-heading">
+        <h2>Expense History</h2>
+        <p>Review your saved budgets and previous expense cycles.</p>
+    </div>
+
+    <button type="button" id="view-history"
+        onclick="window.location.href='history.html'">
+        View History
+    </button>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</main>
+</body>
+</html>

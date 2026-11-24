@@ -1,0 +1,620 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFF9E9;
+    color: #49391F;
+    padding: 35px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #8A6415;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #7C705B;
+}
+
+.month-section {
+    margin-bottom: 25px;
+}
+
+.month-section label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.month-section input {
+    padding: 10px;
+    border: 1px solid #E4C66F;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px #6B4B1010;
+}
+
+.card h3 {
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.card h2 {
+    font-size: 27px;
+}
+
+.budget-card {
+    background-color: #F8E6A0;
+}
+
+.spent-card {
+    background-color: #FFFFFF;
+}
+
+.remaining-card {
+    background-color: #E7EBCF;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 20px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+}
+
+.month-section h2 {
+    font-size: 21px;
+    margin-bottom: 18px;
+    color: #8A6415;
+}
+
+.date-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 16px;
+}
+
+.date-inputs div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.date-inputs label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.date-inputs input {
+    padding: 12px;
+    border: 1px solid #E4C66F;
+    border-radius: 9px;
+    background: #FFFFFF;
+    color: #49391F;
+}
+
+.date-inputs button {
+    padding: 13px 18px;
+    background: #DDB52E;
+    color: #49391F;
+    border: none;
+    border-radius: 9px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.date-inputs button:hover {
+    background: #C9A020;
+}
+
+#cycle-message {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.date-cell {
+    min-width: 100px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.date-number {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: #49391F;
+    margin-bottom: 5px;
+}
+
+.day-name {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    color: #8B806B;
+}
+
+.weekend .date-number,
+.weekend .day-name {
+    color: #D93025;
+}
+
+/* Cleaner expense table */
+.expense-section {
+    margin-top: 28px;
+    padding: 24px;
+    border: 1px solid #F0E2BE;
+}
+
+#expense-table {
+    border-spacing: 0;
+    border-collapse: separate;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+#expense-table th,
+#expense-table td {
+    padding: 12px 10px;
+}
+
+#expense-table tbody tr:nth-child(even) {
+    background: #FFFCF4;
+}
+
+#expense-table tbody tr:hover {
+    background: #FFF4D4;
+}
+
+#expense-table input {
+    width: 88px;
+    max-width: 100%;
+    min-height: 38px;
+    padding: 8px;
+    border: 1px solid #E8DDBF;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#expense-table input:focus {
+    outline: none;
+    border-color: #DDB52E;
+    box-shadow: 0 0 0 3px #F8E6A055;
+}
+
+.date-cell {
+    min-width: 105px;
+    text-align: left;
+}
+
+.date-number {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.day-name {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    color: #8B806B;
+}
+
+.weekend .date-number,
+.weekend .day-name {
+    color: #D93025;
+}
+
+.row-total {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.history-section {
+    margin-top: 28px;
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid #F0E2BE;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px #6B4B1010;
+}
+
+.history-section h2 {
+    color: #8A6415;
+    margin-bottom: 8px;
+}
+
+.history-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.history-controls select,
+.history-controls button {
+    padding: 11px 14px;
+    border-radius: 9px;
+    border: 1px solid #E4C66F;
+    font: inherit;
+}
+
+.history-controls select {
+    flex: 1;
+    min-width: 220px;
+    background: #FFFEFA;
+    color: #49391F;
+}
+
+.history-controls button {
+    background: #DDB52E;
+    color: #49391F;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#history-message {
+    margin-top: 12px;
+    color: #6D6A45;
+    font-size: 14px;
+}
+
+/* Rounded table with clear row and column borders */
+#expense-table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #E8D49A;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #FFFEFA;
+}
+
+/* Borders between every cell */
+#expense-table th,
+#expense-table td {
+    padding: 14px 12px;
+    border-right: 1px solid #E8D49A;
+    border-bottom: 1px solid #E8D49A;
+    text-align: center;
+}
+
+/* Remove extra borders on the outside edges */
+#expense-table tr > *:last-child {
+    border-right: none;
+}
+
+#expense-table tfoot tr:last-child > * {
+    border-bottom: none;
+}
+
+/* Header */
+#expense-table thead th {
+    background: #FFF0BC;
+    color: #634814;
+    font-weight: 700;
+}
+
+/* Daily rows */
+#expense-table tbody tr {
+    background: #FFFEFA;
+}
+
+#expense-table tbody tr:hover {
+    background: #FFF8E5;
+}
+
+/* Inputs */
+#expense-table input {
+    width: 100%;
+    min-width: 65px;
+    padding: 10px;
+    border: 1px solid #E3D6B8;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+}
+
+/* Totals row */
+#expense-table tfoot th {
+    background: #FFF1C5;
+    color: #634814;
+    font-weight: 700;
+}
+
+/* Date and weekday */
+.date-cell {
+    text-align: left !important;
+    min-width: 115px;
+}
+
+.date-number {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.day-name {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    color: #82735B;
+}
+
+/* Weekend in red */
+.weekend .date-number,
+.weekend .day-name {
+    color: #D93025;
+}
+/* Show the login screen first */
+#dashboard-section {
+    display: none;
+}
+
+/* Keep the login form visible before login */
+#auth-section {
+    display: block;
+}
+
+/* Separate Expense History page */
+.history-page {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px;
+}
+
+.history-page header {
+    margin-bottom: 30px;
+}
+
+.history-page h1 {
+    color: #96620f;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.history-card {
+    background: #ffffff;
+    padding: 25px;
+    border: 1px solid #f0dfb5;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(100, 70, 20, 0.08);
+}
+
+.history-card label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.history-card select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #e4c77d;
+    border-radius: 8px;
+    background: #fffdf7;
+    font-size: 16px;
+}
+
+.history-page button {
+    padding: 12px 18px;
+    margin: 5px 5px 5px 0;
+    border: none;
+    border-radius: 8px;
+    background: #e2b62c;
+    color: #4b3510;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.history-page button:hover {
+    background: #d1a51d;
+}
+
+#history-details {
+    margin-top: 25px;
+    padding: 25px;
+    background: #ffffff;
+    border: 1px solid #f0dfb5;
+    border-radius: 18px;
+}
+
+#history-details h2 {
+    color: #96620f;
+}
+
+@media (max-width: 600px) {
+    .history-page {
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    .history-page h1 {
+        font-size: 32px;
+    }
+}
+
+/* Dashboard Expense History section */
+.history-section {
+    margin: 35px 0;
+    padding: 28px;
+    background: #ffffff;
+    border: 1px solid #f0dfb5;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(100, 70, 20, 0.06);
+}
+
+.history-section h2 {
+    color: #96620f;
+    margin-bottom: 8px;
+}
+
+.history-section p {
+    color: #725c3d;
+    margin-bottom: 16px;
+}
+
+.history-section button {
+    padding: 12px 22px;
+    background: #e2b62c;
+    color: #4b3510;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.history-section button:hover {
+    background: #d1a51d;
+}
+
+/* History details table */
+#history-details .table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+#history-table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+    background: #fffdf7;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#history-table th,
+#history-table td {
+    padding: 14px 16px;
+    border: 1px solid #ead8a9;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#history-table th {
+    background: #ffefbd;
+    color: #624315;
+    font-weight: 700;
+}
+
+#history-table tbody tr:nth-child(even) {
+    background: #fff8e7;
+}
+
+#history-details p {
+    margin: 8px 0;
+    color: #604a2b;
+}
+
+#history-details h2 {
+    margin-bottom: 16px;
+}
+
+/* Polished Expense History page */
+.history-page {
+    width: calc(100% - 40px);
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.history-page header {
+    margin-bottom: 28px;
+}
+
+.history-page header h1 {
+    color: #96620f;
+    font-size: 42px;
+    margin: 0 0 10px;
+}
+
+.history-page header p {
+    color: #806b4c;
+    font-size: 18px;
+    margin: 0;
+}
+
+.history-card,
+#history-details {
+    box-sizing: border-box;
+    width: 100%;
+    background: #ffffff;
+    padding: 28px;
+    margin-bottom: 28px;
+    border: 1px solid #f0dfb5;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(100, 70, 20, 0.06);
+}
+
+.history-page button {
+    transition: background-color 0.2s ease;
+}
+
+#back-dashboard {
+    background: #ece8d0;
+    color: #574522;
+}
+
+#back-dashboard:hover {
+    background: #ded6b1;
+}
+
+#history-message {
+    margin-top: 16px;
+    color: #725c3d;
+}
+
+@media (max-width: 600px) {
+    .history-page {
+        width: 100%;
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    .history-page header h1 {
+        font-size: 32px;
+    }
+
+    .history-card,
+    #history-details {
+        padding: 18px;
+    }
+
+    .history-page button {
+        width: 100%;
+        margin: 6px 0;
+    }
+}

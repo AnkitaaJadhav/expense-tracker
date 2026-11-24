@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="history-page">
+        <header>
+            <h1>Expense History</h1>
+            <p>Review your previous expense cycles.</p>
+        </header>
+
+        <section class="history-card">
+            <label for="history-select">Select an expense cycle</label>
+            <select id="history-select">
+                <option value="">Select an expense cycle</option>
+            </select>
+
+            <button type="button" id="view-history">View History</button>
+            <button type="button" id="back-dashboard">Back to Dashboard</button>
+
+            <p id="history-message" role="status"></p>
+        </section>
+
+        <section id="history-details" hidden>
+            <h2>Cycle Details</h2>
+            <p>Start Date: <span id="history-start"></span></p>
+            <p>End Date: <span id="history-end"></span></p>
+            <p>Budget: <span id="history-budget"></span></p>
+            <p>Total Spent: <span id="history-spent"></span></p>
+
+            <div class="table-container">
+                <table id="history-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Breakfast</th>
+                            <th>Lunch</th>
+                            <th>Dinner</th>
+                            <th>Extra</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="history.js"></script>
+</body>
+</html>
